@@ -18,7 +18,7 @@ import quaternion
 
 DEFAULT_EARTH_GRAVITY = onp.array([0.0, 0.0, -9.8])
 # Baumgarte stabilization, fraction of constraint error reduced each step
-BAUMGARTE_ERROR_REDUCTION_PARAMETER = 0#0.01
+BAUMGARTE_ERROR_REDUCTION_PARAMETER = 0.1
 
 
 class RigidBody(object):

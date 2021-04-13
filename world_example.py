@@ -33,7 +33,7 @@ NUM_SOLVER_ITERATIONS = 20
 
 FLAGS = flags.FLAGS
 
-USE_TGS = True
+USE_TGS = False
 
 USE_TWO_SPHERE = True
 
@@ -57,12 +57,12 @@ def main(argv):
 
   sphere = geometry.Sphere(0.5)
   body_1 = rigidbody.RigidBody(inv_mass=1.0, collision_shape=sphere)
-  body_1.world_pose.position = np.array([0., 0.2, .5])
+  body_1.world_pose.position = np.array([0., 0., .5])
   w.bodies.append(body_1)
 
   if USE_TWO_SPHERE:
-    body_2 = rigidbody.RigidBody(inv_mass=1, collision_shape=sphere)
-    body_2.world_pose.position = np.array([0., 0., 1.5])
+    body_2 = rigidbody.RigidBody(inv_mass=2, collision_shape=sphere)
+    body_2.world_pose.position = np.array([0., 0.2, 1.5])
     w.bodies.append(body_2)
 
   dt = SIMULATION_TIME_STEP

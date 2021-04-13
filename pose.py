@@ -16,10 +16,9 @@ import quaternion
 class Pose(object):
   """Pose is a coordinate frame specified as position and orientation quaternion."""
 
-  def __init__(self, position=onp.zeros(3), orientation=None):
+  def __init__(self, position=onp.zeros(3), orientation=quaternion.identity()):
     self.position = position
-    if orientation is None:
-      self.orientation = quaternion.identity()
+    self.orientation = quaternion.identity()
 
   def transform(self, point):
     """Transform a point by a pose."""
