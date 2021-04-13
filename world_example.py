@@ -5,13 +5,11 @@ Usage:
   Build and launch a Bullet physics server, purely for visualization (not
   physics simulation!)
 
-  blaze build -c opt --config=grte_v5 third_party/bullet:ExampleBrowser
-  blaze-bin/third_party/bullet/ExampleBrowser --start_demo_name="Physics
-  Server"&
+  pip install pybullet --user
 
   Now run the world_example:
 
-  blaze run -c opt //robotics/learning/differentiable_physics:world_example
+  python world_example.py
 
 """
 
