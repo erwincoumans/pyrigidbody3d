@@ -13,8 +13,8 @@ Notation:
 
 import numpy as np
 import numpy as onp
-import pose
-import quaternion
+from pyrigidbody3d import pose
+from pyrigidbody3d import quaternion
 
 DEFAULT_EARTH_GRAVITY = onp.array([0.0, 0.0, -9.8])
 # Baumgarte stabilization, fraction of constraint error reduced each step

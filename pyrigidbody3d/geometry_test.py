@@ -3,8 +3,8 @@ from __future__ import division
 from __future__ import print_function
 
 import numpy as np
-import geometry
-import pose
+from pyrigidbody3d import geometry
+from pyrigidbody3d import pose
 import unittest
 
 

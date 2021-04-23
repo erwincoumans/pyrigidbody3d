@@ -11,8 +11,8 @@ Notation:
 
 """
 
-import geometry
-import rigidbody
+from pyrigidbody3d import geometry
+from pyrigidbody3d import rigidbody
 
 
 class World(object):

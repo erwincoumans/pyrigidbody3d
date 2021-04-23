@@ -4,7 +4,7 @@ from __future__ import print_function
 
 import numpy as np
 import numpy as onp
-import pose
+from pyrigidbody3d import pose
 import unittest
 
 

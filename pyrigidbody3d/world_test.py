@@ -5,9 +5,9 @@ from __future__ import print_function
 import copy
 import numpy as np
 
-import geometry
-import rigidbody
-import world
+from pyrigidbody3d import geometry
+from pyrigidbody3d import rigidbody
+from pyrigidbody3d import world
 import unittest
 
 SIMULATION_TIME_STEP = 1. / 60.

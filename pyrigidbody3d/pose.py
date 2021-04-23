@@ -10,7 +10,7 @@ Notation:
 
 import numpy as onp
 
-import quaternion
+from pyrigidbody3d import quaternion
 
 
 class Pose(object):

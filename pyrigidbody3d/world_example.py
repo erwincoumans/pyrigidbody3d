@@ -20,9 +20,9 @@ from __future__ import print_function
 from absl import app
 from absl import flags
 import numpy as np
-import geometry
-import rigidbody
-import world
+from pyrigidbody3d import geometry
+from pyrigidbody3d import rigidbody
+from pyrigidbody3d import world
 import pybullet as p
 import pybullet_data as pd
 
