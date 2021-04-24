@@ -1,4 +1,4 @@
-# py_rigidbody_3d
+# pyRigidBody3d
 A simple 3D rigid body simulation written in python
 
 ## Local Installation
