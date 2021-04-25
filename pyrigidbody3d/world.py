@@ -20,6 +20,7 @@ class World(object):
 
   def __init__(self, num_solver_iterations):
     self.bodies = []
+    self.spherical_joints = []
     self.num_solver_iterations = num_solver_iterations
 
   def step(self, dt):
@@ -49,6 +50,8 @@ class World(object):
                 contact.body_b = body_1
                 contact_points.append(contact)
     for i in range(self.num_solver_iterations):
+      for joint in self.spherical_joints:
+        rigidbody.resolve_spherical_joint(joint, dt)
       for contact in contact_points:
         rigidbody.resolve_collision(contact, dt)
 

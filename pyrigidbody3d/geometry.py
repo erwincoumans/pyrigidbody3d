@@ -125,7 +125,7 @@ def contact_plane_sphere(plane_a, pose_a, sphere_b, pose_b):
 #   return [pt]
 
 contactFunctions = [[contact_sphere_sphere, None], [contact_plane_sphere, None]]
-
+#contactFunctions = [[None,None], [contact_plane_sphere,None]]
 
 def compute_contacts(shape_a, pose_a, shape_b, pose_b):
   """Compute closest points between two shapes.
@@ -140,4 +140,7 @@ def compute_contacts(shape_a, pose_a, shape_b, pose_b):
     a list of contact points.
   """
   func = contactFunctions[shape_a.type][shape_b.type]
-  return func(shape_a, pose_a, shape_b, pose_b)
+  if (func is not None):
+    return func(shape_a, pose_a, shape_b, pose_b)
+  return []
+
