@@ -15,7 +15,7 @@ import math
 import time
 
 SIMULATION_TIME_STEP = 1. / 60.#240.
-NUM_SOLVER_ITERATIONS = 120
+NUM_SOLVER_ITERATIONS = 10 
 RADIUS=0.5
 
 physics_world = world.World(NUM_SOLVER_ITERATIONS)

@@ -51,7 +51,7 @@ class World(object):
                 contact_points.append(contact)
     for i in range(self.num_solver_iterations):
       for joint in self.spherical_joints:
-        rigidbody.resolve_spherical_joint(joint, dt)
+        joint.solve_joint(dt)
       for contact in contact_points:
         rigidbody.resolve_collision(contact, dt)
 
