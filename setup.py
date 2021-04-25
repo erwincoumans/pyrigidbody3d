@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
     name="pyrigidbody3d",
-    version="0.2",
+    version="0.3",
     description="Very simple toy implementation of a 3d rigid body physics engine in Python.",
     long_description="Very simple toy implementation of a 3d rigid body physics engine in Python.",
     url="https://github.com/erwincoumans/py_rigidbody_3d",
