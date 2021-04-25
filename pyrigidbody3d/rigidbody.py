@@ -16,7 +16,6 @@ import numpy as onp
 from pyrigidbody3d import pose
 from pyrigidbody3d import quaternion
 
-DEFAULT_EARTH_GRAVITY = onp.array([0.0, 0.0, -9.8])
 # Baumgarte stabilization, fraction of constraint error reduced each step
 BAUMGARTE_ERROR_REDUCTION_PARAMETER = 0.1
 
@@ -49,7 +48,7 @@ class RigidBody(object):
     self.restitution = 0.0
     self.friction_coeffcient = 0.5
 
-  def apply_gravity(self, gravity_acceleration=DEFAULT_EARTH_GRAVITY):
+  def apply_gravity(self, gravity_acceleration):
     """Apply gravity force given the acceleration.
 
     Args:

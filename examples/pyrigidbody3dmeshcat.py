@@ -13,11 +13,15 @@ import meshcat.transformations as tf
 import math
 import time
 
+import numpy as np
+ 
+
 SIMULATION_TIME_STEP = 1. / 60.#240.
 NUM_SOLVER_ITERATIONS = 20
 RADIUS=0.5
 
 physics_world = world.World(NUM_SOLVER_ITERATIONS)
+physics_world.gravity = np.array([0.0, -2.0, -9.8])
 vis = meshcat.Visualizer().open()
 
 #physics plane
@@ -62,7 +66,8 @@ anim = Animation()
 
 for frame_index in range(200):
   physics_world.step(dt)
-  mat4[:3, 3] = sphere_id.world_pose.position
+  mat4 = sphere_id.world_pose.matrix()
+  
   with anim.at_frame(vis, frame_index) as frame:
     frame["sphere"].set_transform(mat4)
     

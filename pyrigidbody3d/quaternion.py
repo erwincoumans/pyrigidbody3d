@@ -17,7 +17,7 @@ Notation:
 
 import numpy as np
 import numpy as onp
-
+import math
 
 class Quaternion(object):
   """Quaternion defines a 3D rotation and some operators."""

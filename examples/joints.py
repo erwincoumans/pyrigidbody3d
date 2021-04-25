@@ -59,8 +59,9 @@ for i in range (num_spheres):
   vis[name].set_object(sphere,g.MeshPhongMaterial(color=0x5555ff, wireframe=True))
 
   #todo: convert the sphere orientation quaternion to mat3x3
-  mat4 = tf.rotation_matrix(0, [0, 0, 1])
-  mat4[:3, 3] = sphere_id.world_pose.position
+  #mat4 = tf.rotation_matrix(0, [0, 0, 1])
+  #mat4[:3, 3] = sphere_id.world_pose.position
+  mat4 = sphere_id.world_pose.matrix()
   vis[name].set_transform(mat4)
   spheres.append(sphere_id)
 
@@ -75,7 +76,7 @@ while 1:
   for i in range (num_spheres):
     sphere_id = spheres[i]
     name = 'sphere'+str(i)
-    mat4[:3, 3] = sphere_id.world_pose.position
+    mat4 = sphere_id.world_pose.matrix()
     #with anim.at_frame(vis, frame_index) as frame:
     #  frame[name].set_transform(mat4)
     vis[name].set_transform(mat4)

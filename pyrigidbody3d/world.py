@@ -10,9 +10,11 @@ Notation:
   w.step(dt)
 
 """
-
+import numpy as np
 from pyrigidbody3d import geometry
 from pyrigidbody3d import rigidbody
+DEFAULT_EARTH_GRAVITY = np.array([0.0, 0.0, -9.8])
+
 
 
 class World(object):
@@ -22,12 +24,13 @@ class World(object):
     self.bodies = []
     self.spherical_joints = []
     self.num_solver_iterations = num_solver_iterations
+    self.gravity = DEFAULT_EARTH_GRAVITY
 
   def step(self, dt):
     """step performs forward dynamics including collision detection and response."""
 
     for b in self.bodies:
-      b.apply_gravity()
+      b.apply_gravity(self.gravity)
       b.apply_force_impulse(dt)
       b.clear_forces()
 
